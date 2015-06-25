@@ -1,0 +1,1 @@
+playframework2-elasticsearch-sample
