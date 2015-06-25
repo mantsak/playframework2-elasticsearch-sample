@@ -1,0 +1,11 @@
+@(persons: List[Person])
+
+@main("Welcome to Play") {
+
+<ul>
+@for(p <- persons) {
+  <li>@p ($@p)</li>
+}
+</ul>
+
+}
