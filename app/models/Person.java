@@ -1,15 +1,13 @@
 package models;
 
-import java.util.List;
-
-import org.elasticsearch.action.index.IndexResponse;
-import org.elasticsearch.index.query.FilterBuilders;
-
-import play.libs.F;
-
 import com.github.eduardofcbg.plugin.es.Finder;
 import com.github.eduardofcbg.plugin.es.Index;
 import com.github.eduardofcbg.plugin.es.Type;
+import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.index.query.FilterBuilders;
+import play.libs.F;
+
+import java.util.List;
 
 @Type.Name("person")
 @Type.ResultsPerPage(5)
@@ -24,6 +22,8 @@ public class Person extends Index {
         this.name = name;
         this.age = age;
     }
+
+    public Person() {}
 
     public F.Promise<IndexResponse> index() {
         return find.index(this);

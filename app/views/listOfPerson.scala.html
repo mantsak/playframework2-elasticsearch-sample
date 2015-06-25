@@ -1,10 +1,10 @@
-@(persons: List[Person])
+@(persons: java.util.List[Person])
 
-@main("Welcome to Play") {
+@main("Sample") {
 
 <ul>
 @for(p <- persons) {
-  <li>@p ($@p)</li>
+  <li>@p.name - @p.age</li>
 }
 </ul>
 

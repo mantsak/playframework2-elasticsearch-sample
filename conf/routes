@@ -3,8 +3,5 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
-GET		/getadults/:page			controllers.PersonController.getAdults(page: Int)
-
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET        /adults                  @controllers.PersonController.getAdults(page: Int ?= 0)
+GET        /adults/:name/:age       @controllers.PersonController.addAdult(name: String, age: Int)
