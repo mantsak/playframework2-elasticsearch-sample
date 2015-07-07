@@ -1,0 +1,16 @@
+@(p: java.util.Optional[Person])
+
+@main("Person") {
+
+  @if(p.isPresent) {
+
+    <li>@p.get().name - @p.get().age</li>
+
+  } else {
+
+    <h3>Not Found</h3>
+
+  }
+
+}
+

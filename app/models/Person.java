@@ -8,6 +8,7 @@ import org.elasticsearch.index.query.FilterBuilders;
 import play.libs.F;
 
 import java.util.List;
+import java.util.Optional;
 
 @Type.Name("person")
 @Type.ResultsPerPage(5)
@@ -29,7 +30,7 @@ public class Person extends Index {
         return find.index(this);
     }
 
-    public static F.Promise<Person> get(String id) {
+    public static F.Promise<Optional<Person>> get(String id) {
         return find.get(id);
     }
 
