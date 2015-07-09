@@ -3,5 +3,7 @@
 # ~~~~
 
 # Home page
-GET        /adults                  @controllers.PersonController.getAdults(page: Int ?= 0)
-GET        /adults/:name/:age       @controllers.PersonController.addAdult(name: String, age: Int)
+GET        /adults                   @controllers.PersonController.getAdults(page: Int ?= 0)
+GET        /adults/:name/:age        @controllers.PersonController.addAdult(name: String, age: Int)
+GET        /person/:id               @controllers.PersonController.getPerson(id: String)
+GET        /person/get/:id           @controllers.PersonController.getPersonWithTemplateLogic(id: String)
