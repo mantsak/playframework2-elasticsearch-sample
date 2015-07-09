@@ -31,6 +31,7 @@ public class Person extends Index {
     }
 
     public static F.Promise<Optional<Person>> get(String id) {
+        play.Logger.info("Person.get(" + id + ") type:" + find.getType());
         return find.get(id);
     }
 
