@@ -15,7 +15,7 @@ public class PetController extends Controller {
 
         @Inject
         public PetController(ES es) {
-                Pet.registerAsType(Pet.class, es);
+                Pet.registerAsType(es);
         }
 
     public F.Promise<Result> getPet(String id) {
