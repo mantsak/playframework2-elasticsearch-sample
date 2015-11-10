@@ -2,6 +2,7 @@ package controllers;
 
 import com.github.eduardofcbg.plugin.es.ES;
 import models.Person;
+import models.Pet;
 import play.libs.F;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -37,6 +38,30 @@ public class PersonController extends Controller {
     public F.Promise<Result> getPersonWithTemplateLogic(String id) {
         return Person.get(id).map(p -> ok(personWithTemplateLogic.render(p)));
     }
+    
+    public F.Promise<Result> getPersonAndPet(String personId, String petId) {
+        F.Promise<Optional<Person>> promisePerson = Person.get(personId);
+        F.Promise<Optional<Pet>> promisePet = Pet.get(petId); // also tried Pet.find.get(petId);
 
+        return promisePerson.map(p -> {
+            if (p.isPresent()) return ok(person.render(p.get()));
+            else return notFound("not found person with id " + personId);
+        });
+
+        /* something still messed up here, nevermind
+        return promisePerson.map(person -> {
+            if (person.isPresent()) {
+                    return promisePet.map( pet -> {
+                        if (pet.isPresent()) return ok(personAndPet.render(person.get(),pet.get()));
+                        else return notFound("not found pet with id" + petId + ", but person found");
+                    });
+                }
+                else {
+                    return notFound("not found person with id " + personId );
+                }
+            
+        });
+        */
+    }
 
 }
