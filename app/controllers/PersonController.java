@@ -1,21 +1,21 @@
 package controllers;
 
-import com.github.eduardofcbg.plugin.es.DocumentNotFound;
 import com.github.eduardofcbg.plugin.es.ES;
 import models.Person;
 import play.libs.F;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
+import views.html.listOfPerson;
+import views.html.person;
+import views.html.personWithTemplateLogic;
 
 import javax.inject.Inject;
-import java.util.Optional;
 
 public class PersonController extends Controller {
 
 	@Inject
 	public PersonController(ES es) {
-		Person.registerAsType(Person.class, es);
+		Person.registerAsType(es);
 	}
 
     public F.Promise<Result> addAdult(String name, int age) {
