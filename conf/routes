@@ -7,5 +7,3 @@ GET        /adults                   @controllers.PersonController.getAdults(pag
 GET        /adults/:name/:age        @controllers.PersonController.addAdult(name: String, age: Int)
 GET        /person/:id               @controllers.PersonController.getPerson(id: String)
 GET        /person/get/:id           @controllers.PersonController.getPersonWithTemplateLogic(id: String)
-GET        /pet/:id                  @controllers.PetController.getPet(id: String)
-GET        /personandpet/:personid/:petid   @controllers.PersonController.getPersonAndPet(personid: String, petid: String)
