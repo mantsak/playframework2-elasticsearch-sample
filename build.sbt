@@ -10,7 +10,7 @@ libraryDependencies ++= Seq(
   javaJdbc,
   cache,
   javaWs,
-  "com.github.eduardofcbg" %% "play-es" % "1.0-SNAPSHOT"
+  "com.github.eduardofcbg" %% "play-es" % "1.1-SNAPSHOT"
 )
 
 // Play provides two styles of routers, one expects its actions to be injected, the
